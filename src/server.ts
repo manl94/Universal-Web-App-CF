@@ -17,6 +17,12 @@ import { createEngine } from 'angular2-express-engine';
 // App
 import { MainModule } from './app/app.node.module';
 
+
+//BD
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb://localhost/logros");
+
 // enable prod for faster renders
 enableProdMode();
 
