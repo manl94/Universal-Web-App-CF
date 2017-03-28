@@ -253,6 +253,26 @@ exports.MainModule = MainModule;
 var express = __webpack_require__(2);
 var logro_1 = __webpack_require__(21);
 var router = express.Router();
+router.route("/logros/:id")
+    .put(function (req, res) {
+    var logroData = {};
+    if (req.body.title)
+        logroData["title"] = req.body.title;
+    if (req.body.description)
+        logroData["description"] = req.body.description;
+    if (req.body.author)
+        logroData["autor"] = req.body.author;
+    logro_1.Logro.findByIdAndUpdate(req.params.id, logroData, { new: true })
+        .then(function (doc) { return res.json(doc); });
+})
+    .get(function (req, res) {
+    logro_1.Logro.findById(req.params.id)
+        .then(function (doc) { return res.json(doc); });
+})
+    .delete(function (req, res) {
+    logro_1.Logro.findByIdAndRemove(req.params.id)
+        .then(function () { return res.json({ message: "Se elimino recurso con id: " + req.params.id }); });
+});
 router.route("/logros")
     .get(function (req, res) {
     logro_1.Logro.find({}).exec().then(function (documents) { return res.json(documents); });
