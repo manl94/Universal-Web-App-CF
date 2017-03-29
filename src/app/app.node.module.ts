@@ -13,6 +13,7 @@ import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MaterialModule} from '@angular/material'
 import { Cache } from './universal-cache';
 
 @NgModule({
@@ -25,7 +26,9 @@ import { Cache } from './universal-cache';
     HomeModule,
     AboutModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+
+    MaterialModule.forRoot()
   ],
   providers: [
     { provide: 'isBrowser', useValue: isBrowser },

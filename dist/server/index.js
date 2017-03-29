@@ -59,10 +59,10 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "C:\\Users\\mnieto\\Documents\\JavaScript\\ProgressWebApp\\Universal-Web-App-CF";
+/******/ 	__webpack_require__.p = "C:\\Users\\Alejandro\\Documents\\Javascript\\universal-starter-2-1-1";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 27);
+/******/ 	return __webpack_require__(__webpack_require__.s = 28);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -171,7 +171,7 @@ if (!__compiler__.__compiler_private__) {
         CssSelector: __compiler__.CssSelector
     };
 }
-var __universal__ = __webpack_require__(25);
+var __universal__ = __webpack_require__(26);
 if (patch) {
     __universal__.ViewUtils = core_1.__core_private__['view_utils'];
     __universal__.CssSelector = __compiler__.CssSelector;
@@ -195,17 +195,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 // Fix Material Support
-var platform_browser_1 = __webpack_require__(24);
+var platform_browser_1 = __webpack_require__(25);
 function universalMaterialSupports(eventName) { return Boolean(this.isCustomEvent(eventName)); }
 platform_browser_1.__platform_browser_private__.HammerGesturesPlugin.prototype.supports = universalMaterialSupports;
 // End Fix Material Support
 var core_1 = __webpack_require__(0);
 var forms_1 = __webpack_require__(23);
-var node_1 = __webpack_require__(26); // for AoT we need to manually split universal packages
+var node_1 = __webpack_require__(27); // for AoT we need to manually split universal packages
 var home_module_1 = __webpack_require__(19);
 var about_module_1 = __webpack_require__(15);
 var app_component_1 = __webpack_require__(17);
 var app_routing_module_1 = __webpack_require__(16);
+var material_1 = __webpack_require__(24);
 var universal_cache_1 = __webpack_require__(20);
 var MainModule = (function () {
     function MainModule(cache) {
@@ -228,7 +229,8 @@ var MainModule = (function () {
                 forms_1.FormsModule,
                 home_module_1.HomeModule,
                 about_module_1.AboutModule,
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                material_1.MaterialModule.forRoot()
             ],
             providers: [
                 { provide: 'isBrowser', useValue: node_1.isBrowser },
@@ -658,22 +660,28 @@ module.exports = require("@angular/forms");
 /* 24 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/platform-browser");
+module.exports = require("@angular/material");
 
 /***/ },
 /* 25 */
 /***/ function(module, exports) {
 
-module.exports = require("angular2-platform-node/__private_imports__");
+module.exports = require("@angular/platform-browser");
 
 /***/ },
 /* 26 */
 /***/ function(module, exports) {
 
-module.exports = require("angular2-universal/node");
+module.exports = require("angular2-platform-node/__private_imports__");
 
 /***/ },
 /* 27 */
+/***/ function(module, exports) {
+
+module.exports = require("angular2-universal/node");
+
+/***/ },
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";

@@ -7,6 +7,7 @@ import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
+import {MaterialModule} from '@angular/material'
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -18,7 +19,9 @@ import { Cache } from './universal-cache';
     HomeModule,
     AboutModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+
+    MaterialModule.forRoot()
   ],
   providers: [
     { provide: 'isBrowser', useValue: isBrowser },
