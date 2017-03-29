@@ -59,10 +59,10 @@ module.exports =
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "C:\\Users\\Alejandro\\Documents\\Javascript\\universal-starter-2-1-1";
+/******/ 	__webpack_require__.p = "C:\\Users\\mnieto\\Documents\\JavaScript\\ProgressWebApp\\Universal-Web-App-CF";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 28);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -157,7 +157,7 @@ exports.HomeComponent = HomeComponent;
 
 "use strict";
 "use strict";
-var __compiler__ = __webpack_require__(22);
+var __compiler__ = __webpack_require__(24);
 var core_1 = __webpack_require__(0);
 var patch = false;
 if (!core_1.__core_private__['ViewUtils']) {
@@ -171,7 +171,7 @@ if (!__compiler__.__compiler_private__) {
         CssSelector: __compiler__.CssSelector
     };
 }
-var __universal__ = __webpack_require__(26);
+var __universal__ = __webpack_require__(28);
 if (patch) {
     __universal__.ViewUtils = core_1.__core_private__['view_utils'];
     __universal__.CssSelector = __compiler__.CssSelector;
@@ -195,18 +195,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 // Fix Material Support
-var platform_browser_1 = __webpack_require__(25);
+var platform_browser_1 = __webpack_require__(27);
 function universalMaterialSupports(eventName) { return Boolean(this.isCustomEvent(eventName)); }
 platform_browser_1.__platform_browser_private__.HammerGesturesPlugin.prototype.supports = universalMaterialSupports;
 // End Fix Material Support
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(23);
-var node_1 = __webpack_require__(27); // for AoT we need to manually split universal packages
+var forms_1 = __webpack_require__(25);
+var node_1 = __webpack_require__(29); // for AoT we need to manually split universal packages
 var home_module_1 = __webpack_require__(19);
 var about_module_1 = __webpack_require__(15);
 var app_component_1 = __webpack_require__(17);
 var app_routing_module_1 = __webpack_require__(16);
-var material_1 = __webpack_require__(24);
+var material_1 = __webpack_require__(26);
 var universal_cache_1 = __webpack_require__(20);
 var MainModule = (function () {
     function MainModule(cache) {
@@ -456,7 +456,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            template: "\n    <p>Hello Angular Universal App</p>\n    \n    <div>\n      <a routerLink=\"/home\">Home</a>\n      <a routerLink=\"/about\">About</a>\n    </div>\n    \n    <router-outlet></router-outlet>\n  "
+            styles: [__webpack_require__(22)],
+            template: __webpack_require__(23)
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -648,40 +649,52 @@ exports.Logro = mongoose.model("Logro", logroSchema);
 /* 22 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/compiler");
+module.exports = ""
 
 /***/ },
 /* 23 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/forms");
+module.exports = "<md-toolbar color=\"primary\">\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-xs-1\">\r\n\t\t\t<md-icon> reorder</md-icon>\r\n\t\t</div>\r\n\t\t<div class=\"col-xs-10\">\r\n\t\t\t<span>Yo Hice esto</span>\r\n\t\t</div>\r\n\t</div>\r\n\r\n</md-toolbar>\r\n<router-outlet></router-outlet>"
 
 /***/ },
 /* 24 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/material");
+module.exports = require("@angular/compiler");
 
 /***/ },
 /* 25 */
 /***/ function(module, exports) {
 
-module.exports = require("@angular/platform-browser");
+module.exports = require("@angular/forms");
 
 /***/ },
 /* 26 */
 /***/ function(module, exports) {
 
-module.exports = require("angular2-platform-node/__private_imports__");
+module.exports = require("@angular/material");
 
 /***/ },
 /* 27 */
 /***/ function(module, exports) {
 
-module.exports = require("angular2-universal/node");
+module.exports = require("@angular/platform-browser");
 
 /***/ },
 /* 28 */
+/***/ function(module, exports) {
+
+module.exports = require("angular2-platform-node/__private_imports__");
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+module.exports = require("angular2-universal/node");
+
+/***/ },
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
